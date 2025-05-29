@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="img/NS-DOS.png" type="image/png">
+  <title>Portafolio Nahir </title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+<header>
+  <nav class="navbar">
+    <label for="modal-proyectos" role="button" class="icono">
+      <img src="./img/carpeta.png" alt="proyectos">
+      <span>Proyectos</span>
+    </label>
+    <label for="modal-sobremi" role="button" class="icono">
+      <img src="./img/computadora.png" alt="Sobre mí">
+      <span>Sobre mí</span>
+    </label>
+    <label for="modal-certificados" role="button" class="icono">
+      <img src="./img/certificate.png" alt="certficados">
+      <span>Certificados</span>
+    </label>
+    <label for="modal-habilidades" role="button" class="icono">
+      <img src="./img/notahabilidades.png" alt="Proyectos">
+      <span>Habilidades</span>
+    </label>
+     <label for="modal-contacto" role="button" class="icono">
+      <img src="./img/blogdenotas.png" alt="contacto">
+      <span>contacto</span>
+    </label>
+  </nav>
+</header>
+<main>
+  <div class="iconos-extra">
+    <div class="icono-extra">
+      <img src="./img/papelera.png" alt="Papelera de reciclaje">
+      <span>Papelera de reciclaje</span>
+    </div>
+    <div class="icono-extra">
+      <img src="./img/internetexplorer.png" alt="InternetExplorer">
+      <span>Internet Explorer</span>
+    </div>
+    <div class="icono-extra">
+      <img src="./img/NS-DOS.png" alt="NS-DOS">
+      <span>NS-DOS</span>
+    </div>
+  </div>
+
+  <input type="checkbox" id="modal-proyectos" hidden>
+  <div class="ventana">
+    <div class="barra-titulo">
+      <div class="barra-titulo-texto"><p>Proyectos</p></div>
+      <label for="modal-proyectos" class="barra-titulo-cerrar">x</label>
+    </div>
+    <div class="ventana-principal">
+      <p>Contenido del Portafolio</p>
+    </div>
+  </div>
+  <label for="modal-proyectos" class="modal-fondo"></label>
+
+<input type="checkbox" id="modal-sobremi" hidden checked>
+<div class="ventana">
+  <div class="barra-titulo">
+    <div class="barra-titulo-texto"><p>Sobre Mí</p></div>
+    <label for="modal-sobremi" class="barra-titulo-cerrar">x</label>
+  </div>
+  <div class="ventana-principal sobremi-contenido">
+    <div class="perfil-info">
+      <img class="ventana-imagen" src="./img/imagen perfil.jpg" alt="Nahir Nicolas Ñañez">
+      <div class="perfil-texto">
+        <h2>Nahir Nicolas Ñañez</h2>
+        <h3>Desarrollador Web Fullstack</h3>
+      </div>
+    </div>
+    <div class="texto-introduccion">
+      <p>Hola soy Nahir Nicolas Nañez  actualmente estoy en tercer año de la tecnicatura de desarrollo web y aplicaciones digitales.Ademas de cursar el segundo año de la tecnicatura de desarrollo de software .Cuento con conocimientos web de frontend y backend .tambien cuentos con conocimientos de desarrollo mobile en android.Me encanta crear crear diseños unicos.</p>
+    </div>
+  </div>
+</div>
+<label for="modal-sobremi" class="modal-fondo"></label>
+  <input type="checkbox" id="modal-certificados" hidden>
+  <div class="ventana">
+    <div class="barra-titulo">
+      <div class="barra-titulo-texto"><p>Mi certificados</p></div>
+      <label for="modal-certificados" class="barra-titulo-cerrar">x</label>
+    </div>
+    <div class="ventana-principal">
+      <p>certficados.exe</p>
+    </div>
+  </div>
+  <label for="modal-habilidades" class="modal-fondo"></label>
+  <input type="checkbox" id="modal-habilidades" hidden>
+  <div class="ventana">
+    <div class="barra-titulo">
+      <div class="barra-titulo-texto"><p>Habilidades</p></div>
+      <label for="modal-habilidades" class="barra-titulo-cerrar">x</label>
+    </div>
+    <div class="ventana-principal">
+      <p>habilidades </p>
+    </div>
+  </div>
+  <label for="modal-contacto" class="modal-fondo"></label>
+  <label for="modal-contacto" class="modal-fondo"></label>
+  <input type="checkbox" id="modal-contacto" hidden>
+  <div class="ventana">
+    <div class="barra-titulo">
+      <div class="barra-titulo-texto"><p>Contactame</p></div>
+      <label for="modal-contacto" class="barra-titulo-cerrar">x</label>
+    </div>
+    <div class="ventana-principal">
+      <form id="form-contacto">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        <label for="asunto">Asunto:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="escribe un titulo.." required>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@email.com" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+  <label for="modal-habilidades" class="modal-fondo"></label>
+</main>
+<footer class="BarraDeTareas">
+  <div class="boton-inicio">
+    <img src="./img/windows.png" alt="inicio">
+    <span>Inicio</span>
+  </div>
+  <div class="BarraDeTareas-items">
+    <div class="BarraDeTareas-item-sobremi"><p>Sobre Mí</p></div>
+    <div class="BarraDeTareas-item"><a href="https://github.com/nahir1009" target="_blank">Creado por nahir1009</a></div>
+  </div>
+  <div class="reloj"><p>12:00 PM</p></div>
+</footer>
+</body>
+</html>
