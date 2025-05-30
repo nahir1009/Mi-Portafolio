@@ -18,14 +18,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body, html {
     margin: 0;
     padding: 0;
     background: #008080;
     font-family: 'Perfect DOS VGA 437 win';
     user-select: none;
+    cursor: url('./img/arrow.cur'), auto;
    
 }
+
 
 /* --- Variables CSS tamaños y espacio responsive --- */
 :root {
@@ -53,6 +56,10 @@ body, html {
     --icono-gap-extra-mobile: 30px;       
     --icono-texto-margin-top-mobile: 2px;
 }
+h1{
+    display: none;
+}
+
 
 /*Navbar estilos*/
 .navbar {
@@ -71,7 +78,9 @@ body, html {
     display: inline-block; 
     font-size: var(--icono-fuente-size-desktop); 
     font-weight: bold;
+    cursor: url('./img/mano.cur'), pointer;
 }
+
 .icono img {
     width: var(--icono-img-size-desktop);
     height: var(--icono-img-size-desktop);
@@ -80,7 +89,7 @@ body, html {
 }
 .icono span {
     display: block; 
-    margin-top: var(--icono-texto-margin-top-desktop);
+    margin-top: 10px;
     text-align: center;
 }
 
@@ -102,6 +111,7 @@ body, html {
     font-size: 0.875rem; /* equivale a 14px */
     display: none;
     z-index: 100;
+    cursor: url('./img/mano.cur'), pointer;
    
 }
 .barra-titulo {
@@ -118,7 +128,8 @@ body, html {
     border-top: 2px solid #404040;
     border-left: 2px solid #404040;
     border-right: 2px solid white;
-    cursor: default;
+    cursor: url('./img/arrow.cur'), auto;
+    
 }
 .barra-titulo-texto p {
     font-size: 0.875rem;
@@ -147,6 +158,7 @@ body, html {
     color: white;
     border-color: red;
     box-shadow: none;
+    cursor: url('./img/mano.cur'), pointer;
 }
 .ventana-principal {
     background: #ffffff;
@@ -168,6 +180,7 @@ body, html {
     display: none;
     z-index: 50;
     cursor: pointer;
+    cursor: url('./img/mano.cur'), pointer;
 }
 /* Muestro ventanas y fondo cuando checkbox está activo */
 input[id^="modal-"]:checked + .ventana,
@@ -211,7 +224,7 @@ input[id^="modal-"]:checked + .ventana + label {
     border-left-color: white;
     border-bottom-color: #404040;
     border-right-color: #404040;
-    cursor: pointer;
+    cursor: url('./img/mano.cur'), pointer;
     user-select: none;
     box-shadow: 1px 1px #404040 inset, -1px -1px white inset;
     margin-right: 10px;
@@ -234,7 +247,7 @@ input[id^="modal-"]:checked + .ventana + label {
     width: 300px;
     text-align: center;
     box-shadow: 1px 1px #808080, 2px 2px #404040;
-    cursor: default;
+    cursor: url('./img/mano.cur'), pointer;
     user-select: none;
     font-size: 0.875rem; /* 14px */
 }
@@ -249,7 +262,7 @@ input[id^="modal-"]:checked + .ventana + label {
     border-bottom-color: white;
     border-right-color: white;
     box-shadow: inset 1px 1px #808080, inset -1px -1px #d0d0d0;
-    cursor: default;
+    cursor: url('./img/mano.cur'), pointer;
     user-select: none;
     font-size: 0.875rem;
 }
@@ -274,7 +287,7 @@ input[id^="modal-"]:checked + .ventana + label {
     width: var(--icono-contenedor-width-desktop);
     text-align: center;
     color: black;
-    cursor: pointer;
+    cursor: url('./img/mano.cur'), pointer;
     user-select: none;
     font-size: var(--icono-fuente-size-desktop); 
 }
@@ -282,7 +295,7 @@ input[id^="modal-"]:checked + .ventana + label {
     width: var(--icono-img-size-desktop);
     height: var(--icono-img-size-desktop);
     display: block;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 .icono-extra span {
     display: block;
@@ -293,13 +306,19 @@ a{
     text-decoration: none;
     color: black;
     font-family:'Perfect DOS VGA 437 win' ;
+    cursor: url('./img/mano.cur'), pointer;
 }
+
+
 
 p {
     font-family:'Perfect DOS VGA 437 win';
-    font-size: 0.875rem; 
+    font-size: 1rem; 
 }
-
+.perfil-texto-imagen{
+    width:30px ;
+    height: auto;
+}
 /*formulario contacto*/
 #form-contacto {
     display: flex;
@@ -395,12 +414,21 @@ p {
     border-bottom-color: #404040;
     border-right-color: #404040;
 }
+.perfil-texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.perfil-imagenes{
+    margin-top: 15px;
+}
 .perfil-texto h2 {
-    font-size: 1.125rem; 
+    font-size: 1.4rem; 
     color: #000080;
 }
 .perfil-texto h3 {
-    font-size: 0.875rem; 
+    font-size: 1.1rem; 
     color: black;
     font-weight: normal;
 }
@@ -488,10 +516,10 @@ p {
         width: 80px;
     }
     .perfil-texto h2 {
-        font-size: 1rem; 
+        font-size: 1.3rem; 
     }
     .perfil-texto h3 {
-        font-size: 0.8125rem;
+        font-size: 0.95rem;
     }
     .texto-introduccion {
         max-height: 150px;
@@ -581,4 +609,27 @@ p {
         font-size: 0.6875rem; 
         padding: 3px 5px;
     }
+}
+
+
+
+/* Scrollbar diseño  */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: #c0c0c0; /* Gris clásico */
+  border: 2px solid #ffffff; /* Borde blanco */
+  box-shadow: inset 1px 1px 0 #000000; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #808080; /* Gris oscuro */
+  border: 2px solid #ffffff; /* Borde blanco */
+  box-shadow: inset 1px 1px 0 #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a0a0a0; /* Gris claro */
 }
