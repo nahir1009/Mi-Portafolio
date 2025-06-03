@@ -26,7 +26,7 @@ body, html {
     font-family: 'Perfect DOS VGA 437 win';
     user-select: none;
     cursor: url('./img/arrow.cur'), auto;
-   
+    
 }
 
 
@@ -34,16 +34,16 @@ body, html {
 :root {
     /* Desktop (base) */
     --icono-contenedor-width-desktop: 80px; /* Ancho fijo para el contenedor del icono (imagen + texto) */
-    --icono-img-size-desktop: 48px;       /* Tamaño de la imagen del icono */
+    --icono-img-size-desktop: 48px;        /* Tamaño de la imagen del icono */
     --icono-fuente-size-desktop: 0.875rem; /* Tamaño de la fuente del texto del icono (14px) */
-    --icono-gap-navbar-desktop: 50px;     /* Espacio entre iconos del navbar */
-    --icono-gap-extra-desktop: 40px;      /* Espacio entre iconos extra */
+    --icono-gap-navbar-desktop: 50px;      /* Espacio entre iconos del navbar */
+    --icono-gap-extra-desktop: 40px;       /* Espacio entre iconos extra */
     --icono-texto-margin-top-desktop: 0;   /* Margen superior del texto del icono  */
 
     /* Tablet (hasta 768px) */
     --icono-contenedor-width-tablet: 60px;
     --icono-img-size-tablet: 40px;
-    --icono-fuente-size-tablet: 0.75rem;   
+    --icono-fuente-size-tablet: 0.75rem;    
     --icono-gap-tablet: 30px;
     --icono-texto-margin-top-tablet: 4px;
 
@@ -52,8 +52,8 @@ body, html {
     --icono-contenedor-max-width-mobile: 90px;
     --icono-img-size-mobile: 35px;
     --icono-fuente-size-mobile: 0.6875rem; 
-    --icono-gap-navbar-mobile: 26px;       
-    --icono-gap-extra-mobile: 30px;       
+    --icono-gap-navbar-mobile: 26px;        
+    --icono-gap-extra-mobile: 30px;        
     --icono-texto-margin-top-mobile: 2px;
 }
 h1{
@@ -93,6 +93,7 @@ h1{
     text-align: center;
 }
 
+
 /* Ventanas */
 .ventana {
     width: 500px;
@@ -104,7 +105,8 @@ h1{
     border-right-color: #404040;
     box-shadow: 1px 1px #808080, 2px 2px #404040;
     position: fixed;
-    top: 100px;
+    top: 0;
+    margin-top: 50px ;
     left: 50%;
     transform: translateX(-50%);
     user-select: text;
@@ -112,7 +114,38 @@ h1{
     display: none;
     z-index: 100;
     cursor: url('./img/mano.cur'), pointer;
-   
+    
+}
+
+/*Diseño Barra del Menu modales/ventanas*/
+.barra-menu {
+  background: #c0c0c0;
+  display: flex;
+  padding: 4px 8px;
+  gap: 20px;
+  font-family: 'Perfect DOS VGA 437 win';
+  font-size: 0.875rem;
+  border-left: 2px solid #404040;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  border-top: 2px solid #404040;
+  position: relative;
+}
+
+/* Línea divisoria inferior */
+.barra-menu::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to bottom, #ffffff 0%, #808080 100%);
+}
+.barra-menu span:hover {
+  background-color: #000080;
+  color: white;
+  padding: 0 4px;
 }
 .barra-titulo {
     background: linear-gradient(to right, #000080, #0000cd);
@@ -134,7 +167,16 @@ h1{
 .barra-titulo-texto p {
     font-size: 0.875rem;
 }
-.barra-titulo-cerrar {
+
+/* Estilos botones de minimizar, maximizar y cerrar */
+.barra-titulo-controles {
+    display: flex;
+    gap: 3px;
+}
+
+.barra-titulo-cerrar,
+.barra-titulo-minimizar,
+.barra-titulo-maximizar {
     background: #c0c0c0;
     border: 2px solid white;
     border-top-color: white;
@@ -143,16 +185,21 @@ h1{
     border-right-color: #404040;
     width: 20px;
     height: 18px;
-    line-height: 18px;
+    line-height: 18px; 
     text-align: center;
     color: black;
     font-family: 'Perfect DOS VGA 437 win';
-    font-weight: bold;
+    font-weight: normal;
     cursor: pointer;
     user-select: none;
     box-shadow: 1px 1px #404040 inset, -1px -1px white inset;
     font-size: 0.875rem;
+    display: flex; 
+    justify-content: center;
+    align-items: start;
+    padding-bottom: 10px;
 }
+
 .barra-titulo-cerrar:hover {
     background: red;
     color: white;
@@ -160,6 +207,24 @@ h1{
     box-shadow: none;
     cursor: url('./img/mano.cur'), pointer;
 }
+
+.barra-titulo-minimizar:hover,
+.barra-titulo-maximizar:hover {
+    background: #000080;
+    color: white;
+    border-color: #000080;
+    box-shadow: none;
+    cursor: url('./img/mano.cur'), pointer;
+}
+
+
+.barra-titulo-minimizar {
+    font-size: 1.2rem; 
+    line-height: 0.8;
+    align-items: center;
+    
+}
+
 .ventana-principal {
     background: #ffffff;
     padding: 10px;
@@ -170,7 +235,7 @@ h1{
     border-right-color: white;
     color: black;
     font-family: 'Perfect DOS VGA 437 win';
-   
+    
 }
 .modal-fondo {
     position: fixed;
@@ -451,6 +516,121 @@ p {
     
 }
 
+
+/*Habilidades*/
+
+
+.ventana-habilidades {
+    width: 600px;
+}
+
+.habilidades-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background: #c0c0c0;
+}
+
+.iconos-habilidades {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.icono-habilidad {
+    text-align: center;
+    font-size: 0.75rem;
+    color: black;
+}
+
+.icono-habilidad img {
+    width: 100px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 5px auto;
+    border: 1px solid #808080;
+    
+    padding: 4px;
+}
+
+.icono-habilidad span {
+    display: block;
+    margin-top: 4px;
+}
+.habilidades-titulo{
+    font-size: 1.5rem;
+    
+}
+/* Ventana/modal certificados */
+.modal-certificados-contenido {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 15px; 
+    background: #c0c0c0; 
+    overflow-y: auto; 
+    max-height: 400px; 
+    justify-content: center; 
+}
+
+.modal-certificados-contenido img {
+    width: 100%; 
+    height: auto; 
+    border: 2px solid #808080;
+    border-top-color: white;
+    border-left-color: white;
+    border-bottom-color: #404040;
+    border-right-color: #404040;
+    box-shadow: 1px 1px #404040 inset, -1px -1px white inset; 
+    padding: 5px;
+    margin-top: 5px; 
+    object-fit: cover; 
+}
+
+/* Estilos para el modal de imagen certificados grande */
+#ventana-imagen-grande {
+    width: 90%;
+    max-width: 800px; 
+    height: auto;
+    max-height: 90vh; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    z-index: 200; 
+    display: none; 
+    user-select: none; 
+}
+
+.modal-imagen-contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 100%; 
+    overflow: hidden; 
+}
+
+.modal-imagen-contenido img {
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain; 
+    border: none;
+    box-shadow: none; 
+    cursor: default; 
+}
+
+
+#modal-imagen-grande:checked + #ventana-imagen-grande,
+#modal-imagen-grande:checked + #ventana-imagen-grande + label.modal-fondo {
+    display: block;
+}
+
 /* --- Media Queries --- */
 
 /* Ocultar el reloj en tamaños de pantalla intermedios */
@@ -476,7 +656,7 @@ p {
         height: var(--icono-img-size-tablet);
     }
     .icono span {
-        margin-top: var(--icono-texto-margin-top-tablet); 
+        margin-top: 10px
     }
 
     .iconos-extra {
@@ -495,7 +675,7 @@ p {
         margin-top: var(--icono-texto-margin-top-tablet); 
     }
 
-    /*  Modales */
+    /* Modales */
     .ventana {
         width: 95%; 
         max-width: 500px;
@@ -563,6 +743,12 @@ p {
     .BarraDeTareas-item-sobremi {
         display: none;
     }
+     .ventana-proyectos {
+        width: 98%; 
+        top: 3%;
+        max-height: 95vh; 
+    }
+    
 }
 
 /* Media query mobile */
@@ -581,7 +767,7 @@ p {
         height: var(--icono-img-size-mobile);
     }
     .icono span {
-        margin-top: var(--icono-texto-margin-top-mobile);
+        margin-top: 10px;
     }
 
     .iconos-extra {
@@ -600,7 +786,13 @@ p {
     .icono-extra span {
         margin-top: var(--icono-texto-margin-top-mobile);
     }
-
+    
+    .ventana-proyectos {
+        width: 98%; 
+        top: 3%;
+        max-height: 95vh; 
+    }
+    
     .ventana {
         top: 3%;
         max-height: 94vh;
@@ -609,6 +801,31 @@ p {
         font-size: 0.6875rem; 
         padding: 3px 5px;
     }
+    #ventana-imagen-grande{
+        width: 100%;
+        height: 55%;
+    } 
+    .proyectos-contenido {
+        padding: 10px; 
+        gap: 15px; 
+        max-height: 65vh; 
+    }
+
+    .proyecto-card {
+        width: 100%; 
+
+    .proyecto-card-contenido img {
+        height: 100px; 
+    }
+
+    .proyecto-card-contenido p {
+        font-size: 0.8125rem; 
+    }
+
+    .boton-proyecto {
+        font-size: 0.6875rem; 
+        padding: 4px 8px;
+    }  
 }
 
 
@@ -632,4 +849,120 @@ p {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #a0a0a0; /* Gris claro */
+}
+
+/*MODAL PROYECTOS*/
+
+
+.proyectos-contenido {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    padding: 15px; 
+    background: #c0c0c0; 
+    overflow-y: auto; 
+    max-height: 500px; 
+    justify-content: center; 
+}
+
+
+.proyecto-card {
+    width: 350px; 
+    background: #c0c0c0; 
+    border: 2px solid white; 
+    border-top-color: white;
+    border-left-color: white;
+    border-bottom-color: #404040;
+    border-right-color: #404040;
+    box-shadow: 1px 1px #808080, 2px 2px #404040; 
+    display: flex;
+    flex-direction: column; 
+    overflow: hidden;
+}
+
+/* Barra de título para cada tarjeta de proyecto */
+.barra-titulo-card {
+    background: linear-gradient(to right, #000080, #0000cd); /* Degradado azul */
+    color: white;
+    font-family: 'Perfect DOS VGA 437 win';
+    font-weight: bold;
+    padding: 4px 8px;
+    font-size: 0.875rem; 
+    border-bottom: 2px solid white;
+    
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid white;
+}
+
+.barra-titulo-card p {
+    margin: 0; 
+    text-shadow: 1px 1px 0 black; /
+}
+
+/* Contenido principal de la tarjeta de proyecto */
+.proyecto-card-contenido {
+    padding: 10px; 
+    background: #ffffff; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    height: 100%; 
+    border: 2px solid #808080;
+    border-top-color: #404040;
+    border-left-color: #404040;
+    border-bottom-color: white;
+    border-right-color: white;
+}
+
+.proyecto-card-contenido img {
+    width: 100%; 
+    height: 150px; 
+    object-fit: cover; 
+    border: 1px solid #808080;
+    box-shadow: inset 1px 1px #d0d0d0, inset -1px -1px #808080; 
+}
+
+.proyecto-card-contenido p {
+    font-size: 0.875rem; 
+    color: #333; 
+    line-height: 1.3; 
+    flex-grow: 1;
+}
+
+/* Contenedor de los botones dentro de la tarjeta */
+.proyecto-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; 
+    margin-top: 10px; 
+    justify-content: center; 
+}
+
+/* Estilos  botones de "Ver Demo" y "Ver Código" */
+.boton-proyecto {
+    display: inline-block;
+    background: #c0c0c0; 
+    color: black;
+    font-family: 'Perfect DOS VGA 437 win';
+    font-size: 0.8125rem; 
+    padding: 6px 12px;
+    text-decoration: none; 
+    border: 2px solid white; 
+    border-top-color: white;
+    border-left-color: white;
+    border-bottom-color: #404040; 
+    border-right-color: #404040;
+    box-shadow: 1px 1px #404040 inset, -1px -1px white inset; 
+    cursor: url('./img/mano.cur'), pointer;
+    text-align: center;
+    min-width: 80px; 
+}
+
+.boton-proyecto:hover {
+    background: #000080; 
+    color: white;
+    border-color: #000080; 
+    box-shadow: none;
+}
 }
