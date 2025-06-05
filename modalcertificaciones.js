@@ -1,13 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const certificadosModal = document.querySelector('.modal-certificados-contenido');
-
-    // nuevo modal de imagen grande
     const imagenGrandeModalCheckbox = document.getElementById('modal-imagen-grande');
     const imagenCertificadoGrande = document.getElementById('imagen-certificado-grande');
-    const modalImagenGrandeTitulo = document.getElementById('modal-imagen-grande-titulo');
-    const ventanaImagenGrande = document.getElementById('ventana-imagen-grande');
-
+    const modalImagenGrandeTitulo = document.querySelector('#ventana-imagen-grande .barra-titulo-texto h2');
 
     if (certificadosModal) {
         certificadosModal.addEventListener('click', (event) => {
@@ -15,25 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 const clickedImageSrc = event.target.src;
                 const clickedImageAlt = event.target.alt;
 
-               
                 imagenCertificadoGrande.src = clickedImageSrc;
                 imagenCertificadoGrande.alt = clickedImageAlt;
-                modalImagenGrandeTitulo.textContent = clickedImageAlt || "Certificado"; 
+                modalImagenGrandeTitulo.textContent = clickedImageAlt || "Certificado";
 
-                
                 imagenGrandeModalCheckbox.checked = true;
-
-                
             }
         });
     }
 
-  
     const certificadoImages = document.querySelectorAll('.modal-certificados-contenido img');
     certificadoImages.forEach(img => {
-        img.style.cursor = 'pointer'; 
+        img.style.cursor = 'pointer';
     });
 });
+
 
 // Función para actualizar el reloj en la barra de tareas
 function actualizarReloj() {
