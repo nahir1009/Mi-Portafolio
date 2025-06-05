@@ -923,7 +923,6 @@ p {
     .proyectos-contenido {
         gap: 15px; 
         max-width: 700px; 
-    
     }
 
     .proyecto-card {
@@ -969,12 +968,12 @@ p {
     }
     
     .ventana-proyectos {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
         width: 98%; 
-        top: 3%;      
-    
+        top: 3%;
+        max-height: 95vh;
+        height: auto;
+        
+        overflow-x: auto; 
     }
     
     .ventana {
@@ -982,7 +981,8 @@ p {
         width: 98%;
         max-height: 98%;
         
-       
+        overflow-y: auto;
+        margin-top: 0;
     }
     .BarraDeTareas-item {
         font-size: 0.6875rem; 
